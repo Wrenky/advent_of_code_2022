@@ -4,7 +4,7 @@
 namespace import ::tcl::mathop::*
 package require textutil
 proc fold {res op l} {foreach e $l {set res [$op $res $e]}; set res}
-proc filter {cond l} {set res {}; foreach e $l {if [$cond $e] {lappend res $e}}; set res}
+proc filter {cond l} {set res {}; foreach e $l {if [{*}$cond $e] {lappend res $e}}; set res}
 
 proc lpop {listVar {count 1}} {
 	upvar 1 $listVar l
